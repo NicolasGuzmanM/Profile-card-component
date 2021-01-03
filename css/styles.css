@@ -9,110 +9,115 @@
 }
 
 body {
+    background-color: hsl(185, 75%, 39%);
     color: hsl(0, 11%, 12%);
     font-family: 'Kumbh Sans', sans-serif;
 }
 
-section {
-    align-items: center;
-    background-color: hsl(185, 75%, 39%);
+.card-container {
     display: flex;
     height: 100vh;
     justify-content: center;
-    position: relative;
     overflow: hidden;
-    text-align: center;
+    position: relative;
+}
+
+.card-container::before,
+.card-container::after {
+    position: absolute;
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.card-container::before {
+    top: 0;
+    left: 0;
+    background: url('/images/bg-pattern-top.svg') no-repeat bottom right;
+}
+
+.card-container::after {
+    top: 100%;
+    left: 100%;
+    background: url('/images/bg-pattern-bottom.svg') no-repeat top left;
 }
 
 .card {
     background-color: #fff;
     border-radius: 20px;
+    margin: auto;
     overflow: hidden;
     position: relative;
     text-align: center;
     width: 350px;
 }
 
-.card-header {
+.card-bg {
     background-image: url('/images/bg-pattern-card.svg');
     background-size: cover;
     height: 150px;
 }
 
 .card-body {
-    padding: 0 20px 30px;
+    line-height: 2;
+    padding: 0 20px;
 }
 
 .profile-img {
-    border: solid #fff;
+    border: 5px solid #fff;
     border-radius: 50%;
-    height: 100px;
     margin: -50px auto 30px auto;
     overflow: hidden;
-    width: 100px;
+    width: 110px;
 }
 
 .profile-img img {
     display: block;
-    height: auto;
     width: 100%;
+}
+
+.profile-info {
+    position: relative;
+    bottom: 1em;
 }
 
 .name {
     font-size: 1rem;
-    margin-bottom: 20px;
+    font-weight: 700;
 }
 
 .age,
 .city,
-.meta {
+.label {
+    color: hsl(0, 0%, 59%);
     font-weight: 400;
-    color: hsl(0, 11%, 12%);
-    opacity: 0.6;
+}
+
+.city {
+    font-size: 0.9rem;
 }
 
 .card-footer {
     border-top: 1px solid hsl(0, 0%, 59%);
     display: flex;
-    padding: 0 25px;
+    justify-content: space-evenly;
+    line-height: 1.5;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
-.item {
-    align-items: center;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    height: 100px;
-    justify-content: center;
+.number {
+    font-weight: 700;
 }
 
-.value {
-    font-size: 1rem;
-    margin-bottom: 6px;
-}
-
-.meta {
+.label {
     font-size: 0.7rem;
     letter-spacing: 1px;
 }
 
-.c1,
-.c2 {
-    position: absolute;
-}
-
-.c1 {
-    top: -300px;
-    left: -100px;
-}
-
-.c2 {
-    bottom: -450px;
-    right: -75px;
-}
-
 .attribution {
-    background-color: hsl(185, 75%, 39%);
     font-size: 11px;
     text-align: center;
 }
